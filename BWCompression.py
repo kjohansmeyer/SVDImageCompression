@@ -11,16 +11,15 @@ from matplotlib import pyplot as plt
 
 # ====================== Convert Image Into Matrix ========================= #
 # Place image in same directory at this Python file:
-# img = plt.imread('DT Fleming Park (original).JPG')
-img = plt.imread('Schmitt Hall 340.jpeg')
-modes = 50 # Change number of modes (the more nodes, the higher image quality)
+img = plt.imread('WRITE FILE NAME HERE')
+modes = 5 # Change number of modes (the more nodes, the higher image quality)
 
 
 # ======================= Size and Shape of Matrix ========================= #
 print('Original Matrix Shape:',img.shape)
 print('Original Matrix Size:',img.size)
-M = img.shape[0] # number of pixels - height
-N = img.shape[1] # number of pixels - width
+M = img.shape[0] # number of pixels (height)
+N = img.shape[1] # number of pixels (width)
 
 # ============================ Reshaping Data ============================== #
 # Convert M x N x 3 matrix into M x N using RGB weights from NTSC:
@@ -32,9 +31,10 @@ for m in range (0,M):
         imgBW[m][n] = (0.2989)*img[m][n][0] + 1/0.5870*img[m][n][1] + 1/0.1140*img[m][n][2]
         
 # ========== Uncomment Block to See Uncompressed, Grayscale Image ========== #
-# Constructs new image
-plt.imshow(imgBW, cmap='gray')
-plt.show()
+# # Constructs new image
+# plt.imshow(imgBW, cmap='gray')
+# plt.show()
+# plt.imsave('BWImage.png', imgBW, cmap='gray')
 # ========================================================================== #
 
 # ========================== Compress Using SVD ============================ #
@@ -75,7 +75,9 @@ print(truncSigmaVals.shape)
 print(truncWAdjoint.shape)
 
 # ======================= Construct Truncated imgBW ======================== #
-# constructTruncImg = truncV @ truncSigma @ truncWAdjoint
-# plt.imshow(constructTruncImg, cmap='gray')
-# plt.title('SVD, nodes = {}'.format(modes))
-# plt.show()
+constructTruncImg = truncV @ truncSigma @ truncWAdjoint
+plt.imshow(constructTruncImg, cmap='gray')
+plt.title('SVD, modes = {}'.format(modes))
+plt.show()
+# Uncomment to save image (needed to view file size):
+# plt.imsave('BWImageCompressed.png', constructTruncImg, cmap='gray')
