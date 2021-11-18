@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 
 # ====================== Convert Image Into Matrix ========================= #
 # Place image in same directory at this Python file:
-img = plt.imread('WRITE FILE NAME HERE')
+img = plt.imread('INSERT FILE NAME HERE')
 modes = 5 # Change number of modes (the more nodes, the higher image quality)
 
 
@@ -79,5 +79,4 @@ constructTruncImg = truncV @ truncSigma @ truncWAdjoint
 plt.imshow(constructTruncImg, cmap='gray')
 plt.title('SVD, modes = {}'.format(modes))
 plt.show()
-# Uncomment to save image (needed to view file size):
-# plt.imsave('BWImageCompressed.png', constructTruncImg, cmap='gray')
+plt.imsave('BWImageCompressed.png', constructTruncImg, cmap='gray')
