@@ -1,7 +1,7 @@
 # SVDImageCompression
 Image Compression Using Singular Value Decomposition (Project for Applied Linear Algebra)
 
-BWCompression.py converts an image from color to grayscale, then compresses it to the specified number of modes.
+BWCompression.py converts an image from color to grayscale, then compresses it to the specified number of modes (singular values).
 
 ColorCompression.py compresses a color image to the specified number of modes.
 
