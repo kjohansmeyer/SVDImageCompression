@@ -5,6 +5,14 @@ BWCompression.py converts an image from color to grayscale, then compresses it t
 
 ColorCompression.py compresses a color image to the specified number of modes.
 
+Example before compression:
+
+![Screenshot 2022-01-12 10 04 25 AM](https://user-images.githubusercontent.com/80725783/149165971-fb1b2eed-2b0c-4e13-835c-406a51c017c3.png)
+
+Example after compression:
+
+![Screenshot 2022-01-12 10 03 59 AM](https://user-images.githubusercontent.com/80725783/149165972-38030a3b-45cc-46f1-971e-e70a260dc1c6.png)
+
 How to use:
 1. Clone/download the repository.
 2. Place your image file in the same folder as the cloned repository.
