@@ -28,7 +28,7 @@ imgBW = np.zeros((M,N))
 for m in range (0,M):
     for n in range (0,N):
         # RBG weights from NTSC: 0.2989 ∙ Red + 0.5870 ∙ Green + 0.1140 ∙ Blue
-        imgBW[m][n] = (0.2989)*img[m][n][0] + 1/0.5870*img[m][n][1] + 1/0.1140*img[m][n][2]
+        imgBW[m][n] = (0.2989)*img[m][n][0] + (0.5870)*img[m][n][1] + (0.1140)*img[m][n][2]
         
 # ========== Uncomment Block to See Uncompressed, Grayscale Image ========== #
 # # Constructs new image
